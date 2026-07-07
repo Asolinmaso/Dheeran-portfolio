@@ -1,0 +1,170 @@
+.contactSection {
+  background: #000;
+  padding: 120px 40px;
+}
+
+.contactContent {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+
+  align-items: start;
+}
+
+.leftContent {
+  max-width: 514px;
+}
+
+.title {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(5rem, 8vw, 8.75rem);
+  line-height: 0.95;
+  color: #fff;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}
+
+.title span {
+  color: #39d1e6;
+}
+
+.subTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.5rem, 2vw, 2.25rem);
+  line-height: 1.3;
+  color: #c4ced2;
+  max-width: 460px;
+  margin-bottom: 80px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contactInfo h4 {
+  color: #39d1e6;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.contactInfo p {
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1.5;
+}
+
+.rightContent {
+  width: 100%;
+}
+
+.description {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #fff;
+  max-width: 620px;
+  margin-bottom: 40px;
+}
+
+.arrow {
+  color: #fff;
+  font-size: 5rem;
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.form {
+  border: 1px solid #39d1e6;
+  background: #0e1314;
+
+  width: 100%;
+  max-width: 713px;
+
+  padding: 43px 34px 34px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  margin-bottom: 40px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+  color: #fff;
+
+  padding: 12px 0;
+
+  font-size: 1.25rem;
+  outline: none;
+}
+
+.form textarea {
+  resize: none;
+  margin-bottom: 40px;
+}
+
+.form button {
+  width: 100%;
+  height: 95px;
+
+  border: none;
+  cursor: pointer;
+
+  background: #39d1e6;
+  color: #fff;
+
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+@media (max-width: 992px) {
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .arrow {
+    text-align: left;
+  }
+
+  .form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 80px 20px;
+  }
+
+  .contactInfo p {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+  }
+
+  .form button {
+    height: 70px;
+  }
+}
