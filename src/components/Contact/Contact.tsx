@@ -1,15 +1,16 @@
 "use client";
 
-import useScrollReveal from "@/hooks/useScrollReveal";
 import styles from "./Contact.module.css";
+import Reveal from "@/components/Reveal/Reveal";
+
 
 export default function Contact() {
-  useScrollReveal();
 
   return (
+    <Reveal>
     <section
   id="contact"
-  className={`${styles.contactSection} reveal`}
+  className={styles.contactSection}
 >
       <div className={styles.contactContent}>
         <div className={styles.leftContent}>
@@ -78,5 +79,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </Reveal>
   );
 }

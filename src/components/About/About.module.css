@@ -1,13 +1,15 @@
 .about {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 120px 40px;
+  padding: 100px 80px 40px;
   display: grid;
   grid-template-columns: 1fr 518px;
   gap: 40px;
   background: #000;
   align-items: start;
 }
+
+
 
 .left {
   height: 666px;

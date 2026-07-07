@@ -1,15 +1,15 @@
 "use client";
 
-import useScrollReveal from "@/hooks/useScrollReveal";
+import Reveal from "@/components/Reveal/Reveal";
 import styles from "./Gallery.module.css";
 
 export default function Gallery() {
-  useScrollReveal();
 
   return (
+  <Reveal>
     <section
       id="awards"
-      className={`${styles.gallery} reveal`}
+      className={styles.gallery}
     >
       <div className={styles.header}>
         <h2 className={styles.title}>GALLERY</h2>
@@ -46,5 +46,6 @@ export default function Gallery() {
         <button className={styles.arrowBtn}>→</button>
       </div>
     </section>
+    </Reveal>
   );
 }

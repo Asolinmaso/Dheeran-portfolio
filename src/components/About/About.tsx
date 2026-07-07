@@ -1,15 +1,15 @@
 "use client";
 
 import styles from "./About.module.css";
-import useScrollReveal from "@/hooks/useScrollReveal";
+import Reveal from "@/components/Reveal/Reveal";
 
 export default function About() {
-  useScrollReveal();
 
   return (
+    <Reveal>
     <section
       id="about"
-      className={`${styles.about} reveal`}
+      className={styles.about}
     >
       <div className={styles.left}>
         <h2 className={styles.title}>
@@ -45,5 +45,6 @@ export default function About() {
         />
       </div>
     </section>
+    </Reveal>
   );
 }

@@ -1,8 +1,9 @@
 .hero {
   position: relative;
-  height: 900px;
+  height: 760px;
   background: #000;
   overflow: hidden;
+  margin-bottom: 0;
 }
 
 .grid {
@@ -24,10 +25,10 @@
 .glow {
   position: absolute;
   left: 50%;
-  top: 45%;
+  top: 42%;
   transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
+  width: 800px;
+  height: 800px;
   background: radial-gradient(
     circle,
     rgba(57, 209, 230, 0.22) 0%,
@@ -37,146 +38,165 @@
   filter: blur(60px);
 }
 
-.actor {
-  position: absolute;
-  top: 100px;
-  left: 78px;
-  z-index: 5;
-
-  font-family: var(--font-poppins);
-  font-size: 85px;
-  font-weight: 800;
-  line-height: 1;
-  color: #fff0f0;
-}
-
 .name {
   position: absolute;
-  top: 170px;
-  left: 64px;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
 
   font-family: var(--font-anton);
-  font-size: 350px;
-  line-height: 1;
-  letter-spacing: 0;
+  font-size: 360px;
+  line-height: 0.9;
   color: #39d1e6;
+  white-space: nowrap;
 }
 
 .imageWrapper {
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: 20px;
   transform: translateX(-50%);
   z-index: 4;
 }
 
 .image {
-  width: 520px;
+  width: 430px;
   height: auto;
   display: block;
 }
 
-.leftText {
+.leftContent {
   position: absolute;
-  left: 78px;
-  bottom: 70px;
-  width: 390px;
+  left: 45px;
+  top: 330px;
   z-index: 5;
-
-  font-family: var(--font-poppins);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
 }
 
-.rightText {
+.rightContent {
   position: absolute;
-  right: 78px;
-  bottom: 70px;
-  width: 380px;
-  text-align: right;
+  right: 45px;
+  top: 330px;
   z-index: 5;
+  text-align: right;
+}
+
+.heroTitle,
+.actorTitle {
+  font-family: var(--font-poppins);
+  font-size: 92px;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 110px;
+  margin-top: 30px;
+}
+
+.leftText,
+.rightText {
+  width: 320px;
 
   font-family: var(--font-poppins);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 @media (max-width: 1200px) {
   .name {
-    font-size: 320px;
+    font-size: 280px;
   }
 
   .image {
-    width: 460px;
+    width: 380px;
+  }
+
+  .heroTitle,
+  .actorTitle {
+    font-size: 60px;
+    margin-bottom: 70px;
+  }
+
+  .leftContent {
+    left: 30px;
+  }
+
+  .rightContent {
+    right: 30px;
   }
 
   .leftText,
   .rightText {
-    width: 300px;
+    width: 260px;
   }
 }
 
 @media (max-width: 992px) {
   .hero {
     height: auto;
-    min-height: 900px;
+    min-height: 100vh;
+    padding: 100px 24px 60px;
   }
 
   .container {
-    padding: 120px 24px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .actor,
   .name,
-  .imageWrapper,
-  .leftText,
-  .rightText {
+  .leftContent,
+  .rightContent,
+  .imageWrapper {
     position: relative;
-    inset: unset;
-  }
-
-  .actor {
-    left: 0;
-    top: 0;
-    font-size: 56px;
+    left: unset;
+    right: unset;
+    top: unset;
+    bottom: unset;
+    transform: none;
   }
 
   .name {
-    left: 0;
-    top: 0;
-    font-size: 180px;
+    font-size: 160px;
+    text-align: center;
+    margin-bottom: 20px;
   }
 
-  .imageWrapper {
-    transform: none;
-    display: flex;
-    justify-content: center;
-    margin-top: -40px;
+  .image {
+    width: 320px;
+  }
+
+  .leftContent,
+  .rightContent {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .heroTitle,
+  .actorTitle {
+    font-size: 52px;
+    margin-bottom: 24px;
   }
 
   .leftText,
   .rightText {
     width: 100%;
-    text-align: center;
-    margin-top: 24px;
+    max-width: 400px;
   }
 }
 
 @media (max-width: 768px) {
   .name {
-    font-size: 120px;
+    font-size: 100px;
   }
 
-  .actor {
+  .heroTitle,
+  .actorTitle {
     font-size: 42px;
   }
 
   .image {
-    width: 320px;
+    width: 260px;
   }
 }

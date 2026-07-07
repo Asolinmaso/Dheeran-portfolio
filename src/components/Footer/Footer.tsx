@@ -1,12 +1,12 @@
 "use client";
 
-import useScrollReveal from "@/hooks/useScrollReveal";
+import Reveal from "@/components/Reveal/Reveal";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
-  useScrollReveal();
 
   return (
+    <Reveal>
     <section className={styles.footer}>
       <div className={styles.container}>
         <p className={styles.subtitle}>
@@ -42,5 +42,6 @@ export default function Footer() {
         </p>
       </div>
     </section>
+    </Reveal>
   );
 }

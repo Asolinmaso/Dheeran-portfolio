@@ -1,7 +1,7 @@
 .gallery {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 120px 40px;
+  padding: 80px 40px;
   background: #000;
 }
 
@@ -57,6 +57,19 @@
   width: 340px;
   height: 420px;
   object-fit: cover;
+}
+
+.imageOne,
+.imageTwo,
+.imageThree {
+  transition: transform 0.8s ease;
+  cursor: pointer;
+}
+
+.imageOne:hover,
+.imageTwo:hover,
+.imageThree:hover {
+  transform: scale(1.04);
 }
 
 .arrows {

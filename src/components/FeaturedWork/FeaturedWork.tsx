@@ -1,7 +1,7 @@
 "use client";
 
-import useScrollReveal from "@/hooks/useScrollReveal";
 import styles from "./FeaturedWork.module.css";
+import Reveal from "@/components/Reveal/Reveal";
 
 const projects = [
   {
@@ -25,12 +25,12 @@ const projects = [
 ];
 
 export default function FeaturedWork() {
-  useScrollReveal();
 
   return (
+    <Reveal>
     <section
       id="projects"
-      className={`${styles.featured} reveal`}
+      className={styles.featured}
     >
       <div className={styles.header}>
         <h2 className={styles.title}>
@@ -69,5 +69,6 @@ export default function FeaturedWork() {
         ))}
       </div>
     </section>
+    </Reveal>
   );
 }
