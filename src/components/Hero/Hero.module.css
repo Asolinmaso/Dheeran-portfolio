@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  height: 760px;
+  height: 800px;
   background: #000;
   overflow: hidden;
   margin-bottom: 0;
@@ -29,12 +29,10 @@
   transform: translate(-50%, -50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(
-    circle,
-    rgba(57, 209, 230, 0.22) 0%,
-    rgba(57, 209, 230, 0.08) 40%,
-    transparent 75%
-  );
+  background: radial-gradient(circle,
+      rgba(57, 209, 230, 0.22) 0%,
+      rgba(57, 209, 230, 0.08) 40%,
+      transparent 75%);
   filter: blur(60px);
 }
 
@@ -45,25 +43,40 @@
   transform: translateX(-50%);
   z-index: 1;
 
+  display: flex;
+  gap: 6px;
+
   font-family: var(--font-anton);
   font-size: 360px;
   line-height: 0.9;
   color: #39d1e6;
   white-space: nowrap;
+
+  text-shadow:
+    0 0 20px rgba(57, 209, 230, 0.5),
+    0 0 40px rgba(57, 209, 230, 0.4),
+    0 0 80px rgba(57, 209, 230, 0.3);
+  
+  animation: titleFinal 1s ease-out 1.8s forwards;
 }
 
 .imageWrapper {
   position: absolute;
   left: 50%;
-  bottom: 20px;
-  transform: translateX(-50%);
+  top: 56%;
+
+  transform: translate(-50%, -50%);
+
   z-index: 4;
 }
 
 .image {
-  width: 430px;
+  width: 450px;
   height: auto;
   display: block;
+
+  filter: drop-shadow(0 0 30px rgba(57, 209, 230, 0.35));
+  animation: heroFloat 5s ease-in-out infinite;
 }
 
 .leftContent {
@@ -71,6 +84,10 @@
   left: 45px;
   top: 330px;
   z-index: 5;
+
+  opacity: 0;
+  animation: contentLeft 1s ease forwards;
+  animation-delay: 1.2s;
 }
 
 .rightContent {
@@ -79,6 +96,10 @@
   top: 330px;
   z-index: 5;
   text-align: right;
+
+  opacity: 0;
+  animation: contentRight 1s ease forwards;
+  animation-delay: 1.2s;
 }
 
 .heroTitle,
@@ -101,6 +122,144 @@
   font-weight: 400;
   line-height: 1.9;
   color: rgba(255, 255, 255, 0.85);
+}
+
+/* @keyframes titleFinal {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.05);
+  }
+
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+} */
+
+@keyframes heroFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes glowText {
+  from {
+    text-shadow:
+      0 0 20px rgba(57, 209, 230, 0.4),
+      0 0 40px rgba(57, 209, 230, 0.3);
+  }
+
+  to {
+    text-shadow:
+      0 0 35px rgba(57, 209, 230, 0.8),
+      0 0 70px rgba(57, 209, 230, 0.6),
+      0 0 120px rgba(57, 209, 230, 0.4);
+  }
+}
+
+
+.name span {
+  opacity: 0;
+  display: inline-block;
+  animation: titleReveal 0.8s forwards;
+  animation-fill-mode: forwards;
+}
+
+.name span:nth-child(1){animation-delay:.1s}
+.name span:nth-child(2){animation-delay:.2s}
+.name span:nth-child(3){animation-delay:.3s}
+.name span:nth-child(4){animation-delay:.4s}
+.name span:nth-child(5){animation-delay:.5s}
+.name span:nth-child(6){animation-delay:.6s}
+.name span:nth-child(7){animation-delay:.7s}
+
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px) scale(0.3);
+    filter: blur(20px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(20px) scale(1.15);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.heroTitle {
+  opacity: 0;
+  animation: heroLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.actorTitle {
+  opacity: 0;
+  animation: actorRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes heroLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes actorRight {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes contentLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes contentRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 1200px) {
