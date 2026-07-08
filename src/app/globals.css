@@ -41,3 +41,40 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* 
+.introScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+
+  background: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.introLetter {
+  font-family: var(--font-anton);
+  font-size: 45vw;
+  line-height: 1;
+  color: #39d1e6;
+}
+
+.introName {
+  font-family: var(--font-anton);
+
+  font-size: 32vw;
+
+  line-height: 0.8;
+
+  color: #39d1e6;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 0 40px rgba(57, 209, 230, 0.8),
+    0 0 80px rgba(57, 209, 230, 0.6),
+    0 0 160px rgba(57, 209, 230, 0.4);
+} */

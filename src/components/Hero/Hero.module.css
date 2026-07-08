@@ -1,3 +1,345 @@
+/* .hero {
+  position: relative;
+  height: 800px;
+  background: #000;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(57, 209, 230, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57, 209, 230, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.container {
+  position: relative;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle,
+      rgba(57, 209, 230, 0.22) 0%,
+      rgba(57, 209, 230, 0.08) 40%,
+      transparent 75%);
+  filter: blur(60px);
+}
+
+.name {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  display: flex;
+  gap: 6px;
+
+  font-family: var(--font-anton);
+  font-size: 360px;
+  line-height: 0.9;
+  color: #39d1e6;
+  white-space: nowrap;
+
+  text-shadow:
+    0 0 20px rgba(57, 209, 230, 0.5),
+    0 0 40px rgba(57, 209, 230, 0.4),
+    0 0 80px rgba(57, 209, 230, 0.3);
+
+  animation: titleFinal 1s ease-out 1.8s forwards;
+}
+
+.imageWrapper {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 4;
+}
+
+.image {
+  width: 430px;
+  height: auto;
+  display: block;
+
+  filter: drop-shadow(0 0 30px rgba(57, 209, 230, 0.35));
+  animation: heroFloat 5s ease-in-out infinite;
+}
+
+.leftContent {
+  position: absolute;
+  left: 45px;
+  top: 330px;
+  z-index: 5;
+
+  opacity: 0;
+  animation: contentFade 1s ease forwards;
+  animation-delay: 3.4s;
+}
+
+.rightContent {
+  position: absolute;
+  right: 45px;
+  top: 330px;
+  z-index: 5;
+  text-align: right;
+
+  opacity: 0;
+  animation: contentFade 1s ease forwards;
+  animation-delay: 3.8s;
+}
+.heroTitle,
+.actorTitle {
+  font-family: var(--font-poppins);
+  font-size: 92px;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 110px;
+  margin-top: 30px;
+}
+
+.leftText,
+.rightText {
+  width: 320px;
+
+  font-family: var(--font-poppins);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.heroTitle {
+  opacity: 0;
+  animation: cinematicReveal 1s ease forwards;
+  animation-delay: 2.6s;
+}
+
+.actorTitle {
+  opacity: 0;
+  animation: cinematicReveal 1s ease forwards;
+  animation-delay: 3s;
+}
+
+@keyframes heroFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes glowText {
+  from {
+    text-shadow:
+      0 0 20px rgba(57, 209, 230, 0.4),
+      0 0 40px rgba(57, 209, 230, 0.3);
+  }
+
+  to {
+    text-shadow:
+      0 0 35px rgba(57, 209, 230, 0.8),
+      0 0 70px rgba(57, 209, 230, 0.6),
+      0 0 120px rgba(57, 209, 230, 0.4);
+  }
+}
+
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .name {
+    font-size: 280px;
+  }
+
+  .image {
+    width: 380px;
+  }
+
+  .heroTitle,
+  .actorTitle {
+    font-size: 60px;
+    margin-bottom: 70px;
+  }
+
+  .leftContent {
+    left: 30px;
+  }
+
+  .rightContent {
+    right: 30px;
+  }
+
+  .leftText,
+  .rightText {
+    width: 260px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .name {
+    font-size: 180px;
+  }
+
+  .image {
+    width: 320px;
+  }
+
+  .heroTitle,
+  .actorTitle {
+    font-size: 52px;
+    margin-bottom: 40px;
+  }
+
+  .leftContent {
+    left: 20px;
+  }
+
+  .rightContent {
+    right: 20px;
+  }
+
+  .leftText,
+  .rightText {
+    width: 220px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 769px) {
+
+  .name {
+    font-size: 140px;
+  }
+
+  .image {
+    width: 280px;
+  }
+
+  .heroTitle,
+  .actorTitle {
+    font-size: 42px;
+    margin-bottom: 24px;
+  }
+
+  .leftText,
+  .rightText {
+    width: 180px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 80px 20px 50px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .name {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    font-size: 60px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .imageWrapper {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 20px auto;
+    transform: none !important;
+  }
+
+  .image {
+    width: 220px;
+    height: auto;
+  }
+
+  .leftContent,
+  .rightContent {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .heroTitle,
+  .actorTitle {
+    font-size: 38px;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .leftText,
+  .rightText {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .heroTitle,
+  .actorTitle,
+  .leftContent,
+  .rightContent {
+    animation: none;
+    opacity: 1;
+  }
+
+} */
+
+
+
+
 .hero {
   position: relative;
   height: 800px;
@@ -56,24 +398,24 @@
     0 0 20px rgba(57, 209, 230, 0.5),
     0 0 40px rgba(57, 209, 230, 0.4),
     0 0 80px rgba(57, 209, 230, 0.3);
-  
+
   animation: titleFinal 1s ease-out 1.8s forwards;
 }
 
 .imageWrapper {
   position: absolute;
   left: 50%;
-  top: 56%;
+  top: 66%;
 
   transform: translate(-50%, -50%);
-
   z-index: 4;
 }
 
 .image {
-  width: 450px;
+  width: 500px;
   height: auto;
   display: block;
+  transform: translateX(-40px);
 
   filter: drop-shadow(0 0 30px rgba(57, 209, 230, 0.35));
   animation: heroFloat 5s ease-in-out infinite;
@@ -175,13 +517,33 @@
   animation-fill-mode: forwards;
 }
 
-.name span:nth-child(1){animation-delay:.1s}
-.name span:nth-child(2){animation-delay:.2s}
-.name span:nth-child(3){animation-delay:.3s}
-.name span:nth-child(4){animation-delay:.4s}
-.name span:nth-child(5){animation-delay:.5s}
-.name span:nth-child(6){animation-delay:.6s}
-.name span:nth-child(7){animation-delay:.7s}
+.name span:nth-child(1) {
+  animation-delay: .1s
+}
+
+.name span:nth-child(2) {
+  animation-delay: .2s
+}
+
+.name span:nth-child(3) {
+  animation-delay: .3s
+}
+
+.name span:nth-child(4) {
+  animation-delay: .4s
+}
+
+.name span:nth-child(5) {
+  animation-delay: .5s
+}
+
+.name span:nth-child(6) {
+  animation-delay: .6s
+}
+
+.name span:nth-child(7) {
+  animation-delay: .7s
+}
 
 
 @keyframes titleReveal {
@@ -221,6 +583,7 @@
     opacity: 0;
     transform: translateX(-120px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -232,6 +595,7 @@
     opacity: 0;
     transform: translateX(120px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -293,9 +657,9 @@
 
 @media (max-width: 992px) {
   .hero {
+    min-height: auto;
     height: auto;
-    min-height: 100vh;
-    padding: 100px 24px 60px;
+    padding: 90px 20px 50px;
   }
 
   .container {
@@ -309,25 +673,45 @@
   .rightContent,
   .imageWrapper {
     position: relative;
-    left: unset;
-    right: unset;
-    top: unset;
-    bottom: unset;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
     transform: none;
   }
 
   .name {
-    font-size: 160px;
+    font-size: 120px;
+    justify-content: center;
+    margin-bottom: 0;
     text-align: center;
-    margin-bottom: 20px;
+    gap: 2px;
   }
 
-  .image {
-    width: 320px;
+.imageWrapper {
+  position: relative !important;
+
+  left: auto !important;
+  top: auto !important;
+
+  transform: none !important;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.image {
+  width: 230px !important;
+}
+
+  .leftContent {
+    order: 3;
+    text-align: center;
+    margin-top: 0;
   }
 
-  .leftContent,
   .rightContent {
+    order: 4;
     text-align: center;
     margin-top: 30px;
   }
@@ -335,27 +719,62 @@
   .heroTitle,
   .actorTitle {
     font-size: 52px;
-    margin-bottom: 24px;
+    margin: 0 0 16px;
   }
 
   .leftText,
   .rightText {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
   }
 }
 
 @media (max-width: 768px) {
   .name {
-    font-size: 100px;
+    font-size: 72px;
+
+
+  position: relative;
+  z-index: 10;
+
   }
 
-  .heroTitle,
-  .actorTitle {
-    font-size: 42px;
+  .imageWrapper {
+    margin-top: -15px;
+    z-index: 2;
   }
 
   .image {
     width: 260px;
+  }
+
+  .heroTitle,
+  .actorTitle {
+    font-size: 36px;
+  }
+
+  .leftText,
+  .rightText {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 58px;
+  }
+
+  .image {
+    width: 220px;
+  }
+
+  .heroTitle,
+  .actorTitle {
+    font-size: 30px;
   }
 }

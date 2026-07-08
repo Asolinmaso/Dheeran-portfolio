@@ -4,7 +4,7 @@
 }
 
 .contactContent {
-  max-width: 1440px;
+  max-width: 1330px;
   margin: 0 auto;
 
   display: grid;
@@ -157,7 +157,7 @@
   }
 
   .contactInfo p {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   .description {

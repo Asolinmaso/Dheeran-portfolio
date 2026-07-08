@@ -100,3 +100,73 @@
   background: #39d1e6;
   color: #000;
 }
+
+@media (max-width: 1024px) {
+
+  .title {
+    font-size: 90px;
+  }
+
+  .subtitle {
+    width: 350px;
+    font-size: 18px;
+  }
+
+  .galleryGrid {
+    gap: 20px;
+  }
+
+  .imageOne,
+  .imageTwo,
+  .imageThree {
+    width: 220px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .gallery {
+    padding: 60px 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 56px;
+  }
+
+  .subtitle {
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .galleryGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .imageOne,
+  .imageTwo,
+  .imageThree {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .arrows {
+    justify-content: center;
+  }
+
+  .arrowBtn {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+}
