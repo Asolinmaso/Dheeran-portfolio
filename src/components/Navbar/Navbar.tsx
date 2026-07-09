@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="relative h-[72px] border-b border-cyan-500/20 z-50">
+      <header className="fixed top-0 left-0 w-full h-[72px] border-b border-cyan-500/20 z-[999] bg-black/80 backdrop-blur-md">
         <div className="h-full px-5 md:px-16 flex items-center justify-between">
           
           {/* Logo */}

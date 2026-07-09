@@ -1,92 +1,22 @@
-// "use client";
-
-// import Image from "next/image";
-// import styles from "./Hero.module.css";
-// import { motion } from "framer-motion";
-// import CinematicIntro from "@/components/CinematicIntro/CinematicIntro";
-// import { useState } from "react";
-
-// export default function Hero() {
-//   const [introComplete, setIntroComplete] = useState(false);
-//   // console.log("INTRO COMPLETE =", introComplete);
-//   if (!introComplete) {
-//     return (
-//       <CinematicIntro
-//         onComplete={() => setIntroComplete(true)}
-//       />
-//     );
-//   }
-//   return (
-//     <section className={styles.hero}>
-//       <div className={styles.grid}></div>
-
-//       <div className={styles.container}>
-//         <div className={styles.glow}></div>
-
-//         <motion.div
-//           className={styles.imageWrapper}
-//           style={{ x: "-50%", y: "-50%" }}
-//           initial={{
-//             opacity: 0,
-//             y: 150,
-//             scale: 0.9,
-//           }}
-//           animate={{
-//             opacity: 1,
-//             y: 0,
-//             scale: 1,
-//           }}
-//           transition={{
-//             duration: 1.4,
-//             delay: 1.6,
-//             ease: "easeOut",
-//           }}
-//         >
-//           <Image
-//             src="/images/dheeran.png"
-//             alt="Dheeran"
-//             width={500}
-//             height={760}
-//             priority
-//             className={styles.image}
-//           />
-//         </motion.div>
-
-//         <div className={styles.leftContent}>
-//           <h2 className={styles.heroTitle}>HERO</h2>
-
-//           <p className={styles.leftText}>
-//             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-//             Sed do eiusmod tempor incididunt ut labore et dolore magna
-//             aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-//           </p>
-//         </div>
-
-//         <div className={styles.rightContent}>
-//           <h2 className={styles.actorTitle}>ACTOR</h2>
-
-//           <p className={styles.rightText}>
-//             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-//             Sed do eiusmod tempor incididunt ut labore et dolore magna
-//             aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-//           </p>
-//         </div>
-//       </div>
-//     </section >
-//   );
-// }
-
-
-
 "use client";
 
 import Image from "next/image";
 import styles from "./Hero.module.css";
-import Reveal from "@/components/Reveal/Reveal";
 import { motion } from "framer-motion";
+// import { useState } from "react";
+// import CinematicIntro from "@/components/CinematicIntro/CinematicIntro";
 
 
 export default function Hero() {
+  // const [introComplete, setIntroComplete] = useState(false);
+
+  // if (!introComplete) {
+  //   return (
+      // <CinematicIntro
+  //       onComplete={() => setIntroComplete(true)}
+  //     />
+  //   );
+  // }
   return (
     <section className={styles.hero}>
       <div className={styles.grid}></div>
@@ -114,9 +44,9 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className={styles.rightContent}>
-          <h2 className={styles.actorTitle}>ACTOR</h2>
 
+        <h2 className={styles.actorTitle}>ACTOR</h2>
+        <div className={styles.rightContent}>
           <p className={styles.rightText}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -129,15 +59,16 @@ export default function Hero() {
           style={{ x: "-50%", y: "-50%" }}
           initial={{
             opacity: 0,
-            scale: 0.8,
+            scale: 0.9,
           }}
           animate={{
             opacity: 1,
+            y: 0,
             scale: 1,
           }}
           transition={{
             duration: 1.5,
-            delay: 1.8,
+            delay: 1.5,
             ease: "easeOut",
           }}
         >

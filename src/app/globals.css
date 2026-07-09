@@ -42,17 +42,17 @@ html {
   transform: translateY(0);
 }
 
-/* 
 .introScreen {
   position: fixed;
   inset: 0;
-  z-index: 999999;
 
   background: #000;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  z-index: 999999;
 }
 
 .introLetter {
@@ -60,12 +60,18 @@ html {
   font-size: 45vw;
   line-height: 1;
   color: #39d1e6;
+
+  text-shadow:
+    0 0 20px rgba(57, 209, 230, 0.8),
+    0 0 40px rgba(57, 209, 230, 0.6);
+
+  animation: cinematicLetter 1.1s ease forwards;
 }
 
 .introName {
   font-family: var(--font-anton);
 
-  font-size: 32vw;
+  font-size: 34vw;
 
   line-height: 0.8;
 
@@ -77,4 +83,52 @@ html {
     0 0 40px rgba(57, 209, 230, 0.8),
     0 0 80px rgba(57, 209, 230, 0.6),
     0 0 160px rgba(57, 209, 230, 0.4);
-} */
+
+  animation: finalName 3s ease forwards;
+}
+
+@keyframes cinematicLetter {
+  0% {
+    opacity: 0;
+    transform: scale(3);
+    filter: blur(20px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+    filter: blur(15px);
+  }
+}
+
+@keyframes finalName {
+  0% {
+    opacity: 0;
+    transform: scale(6);
+    filter: blur(60px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}

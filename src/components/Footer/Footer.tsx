@@ -23,7 +23,7 @@ export default function Footer() {
           </a>
 
           <a href="#" className={styles.button}>
-            Behance
+            LinkedIn
           </a>
 
           <a href="#" className={styles.button}>
