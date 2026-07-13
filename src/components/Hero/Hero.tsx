@@ -103,7 +103,7 @@ export default function Hero() {
           }}
           transition={{
             duration: 1.5,
-            delay: 3.2,
+            delay: 2.5,
             ease: "easeOut",
           }}
         >

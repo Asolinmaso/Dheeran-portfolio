@@ -20,7 +20,7 @@ export default function Reveal({
         filter: "blur(0px)",
       }}
       viewport={{
-        once: true,
+        once: false,
         amount: 0.2,
       }}
       transition={{

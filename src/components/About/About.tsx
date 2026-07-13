@@ -18,7 +18,7 @@ export default function About() {
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             ABOUT <span>ME</span>
           </motion.h2>
@@ -46,7 +46,7 @@ export default function About() {
                 duration: 0.8,
                 delay: 0.2,
               }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
             />
 
             <p className={styles.bottomText}>
@@ -74,7 +74,7 @@ export default function About() {
               duration: 1,
               delay: 0.4,
             }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           />
         </div>
       </section>
