@@ -153,7 +153,6 @@
   width: 470px;
   height: auto;
   display: block;
-  /* transform: translateX(-40px); */
 
   filter: drop-shadow(0 0 30px rgba(57, 209, 230, 0.35));
   animation: heroFloat 5s ease-in-out infinite;
