@@ -12,7 +12,7 @@ export default function Hero() {
 
   // if (!introComplete) {
   //   return (
-      // <CinematicIntro
+  // <CinematicIntro
   //       onComplete={() => setIntroComplete(true)}
   //     />
   //   );
@@ -24,15 +24,50 @@ export default function Hero() {
       <div className={styles.container}>
         <div className={styles.glow}></div>
 
-        <h1 className={styles.name}>
-          <span>D</span>
-          <span>H</span>
-          <span>E</span>
-          <span>E</span>
-          <span>R</span>
-          <span>A</span>
-          <span>N</span>
-        </h1>
+        <motion.h1
+          className={styles.name}
+          initial="hidden"
+          animate="show"
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.12,
+              },
+            },
+          }}
+        >
+          {"DHEERAN".split("").map((letter, index) => (
+            <motion.span
+              key={index}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  scale: 4,
+                  rotateX: 90,
+                  filter: "blur(40px)",
+                },
+                show: {
+                  opacity: 1,
+                  scale: 1,
+                  rotateX: 0,
+                  filter: "blur(0px)",
+                },
+              }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                stiffness: 140,
+                damping: 12,
+              }}
+              style={{
+                display: "inline-block",
+              }}
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </motion.h1>
 
         <div className={styles.leftContent}>
           <h2 className={styles.heroTitle}>HERO</h2>
@@ -68,7 +103,7 @@ export default function Hero() {
           }}
           transition={{
             duration: 1.5,
-            delay: 1.5,
+            delay: 3.2,
             ease: "easeOut",
           }}
         >
